@@ -199,7 +199,6 @@
 
 <br/>
 <br/>
-<br/>
 
 # 2.1.4 인터넷 전송 프로토콜이 제공하는 서비스
 
@@ -268,10 +267,8 @@ TCP와 UDP는 처리율 혹은 시간 보장 서비스를 제공하지 않는다
 
 ## 인기 있는 인터넷 애플리케이션의 애플리케이션 계층 프로토콜 및 하위 트랜스포트 프로토콜
 
-<p align="center"><img width="500" alt="하위 트랜스포트 프로토콜" src="https://user-images.githubusercontent.com/76640167/210484597-debfaad5-bc3b-4c64-ba00-fef7502dab75.png">
+<p align="center"><img width="400" alt="하위 트랜스포트 프로토콜" src="https://user-images.githubusercontent.com/76640167/210484597-debfaad5-bc3b-4c64-ba00-fef7502dab75.png">
 
-<br/>
-<br/>
 <br/>
 <br/>
 
@@ -302,8 +299,6 @@ TCP와 UDP는 처리율 혹은 시간 보장 서비스를 제공하지 않는다
 
 예를 들어, 웹 애플리케이션은 문서 포맷 표준, 웹 브라우저, 웹 서버, 웹 애플리케이션 계층 프로토콜(HTTP)을 포함하는 여러 요소들로 구성된다.
 
-<br/>
-<br/>
 <br/>
 
 # 2.1.6 이 책에서 다루는 네트워크 애플리케이션
