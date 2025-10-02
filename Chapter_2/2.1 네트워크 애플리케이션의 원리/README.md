@@ -25,7 +25,7 @@
 
 ## 잘 알려진 애플리케이션 구조 2가지
 
-<p align="center"><img width="700" alt="애플리케이션 구조" src="https://user-images.githubusercontent.com/76640167/210484607-f2096b44-08ec-4e8d-b75d-4e3df863f35d.png">
+<p align="center"><img width="300" alt="애플리케이션 구조" src="https://user-images.githubusercontent.com/76640167/210484607-f2096b44-08ec-4e8d-b75d-4e3df863f35d.png">
 
 <br/>
 <br/>
@@ -93,7 +93,7 @@
 
 <br/>
 
-<p align="center"><img width="700" alt="소켓" src="https://user-images.githubusercontent.com/76640167/210484602-4feb26bd-c1bf-43dd-aa19-14fcac26b146.png">
+<p align="center"><img width="500" alt="소켓" src="https://user-images.githubusercontent.com/76640167/210484602-4feb26bd-c1bf-43dd-aa19-14fcac26b146.png">
 
 <br/>
 <br/>
@@ -268,7 +268,7 @@ TCP와 UDP는 처리율 혹은 시간 보장 서비스를 제공하지 않는다
 
 ## 인기 있는 인터넷 애플리케이션의 애플리케이션 계층 프로토콜 및 하위 트랜스포트 프로토콜
 
-<p align="center"><img width="800" alt="하위 트랜스포트 프로토콜" src="https://user-images.githubusercontent.com/76640167/210484597-debfaad5-bc3b-4c64-ba00-fef7502dab75.png">
+<p align="center"><img width="500" alt="하위 트랜스포트 프로토콜" src="https://user-images.githubusercontent.com/76640167/210484597-debfaad5-bc3b-4c64-ba00-fef7502dab75.png">
 
 <br/>
 <br/>
