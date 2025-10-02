@@ -1,0 +1,81 @@
+name: Build Markdown to PDF
+
+on:
+  workflow_dispatch: {}        # 수동 실행 버튼
+  push:
+    paths:
+      - "**/*.md"              # md 변경 시 자동 빌드
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install pandoc + LaTeX + CJK fonts
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y pandoc texlive-xetex texlive-latex-recommended texlive-latex-extra
+          sudo apt-get install -y fonts-noto-cjk fonts-noto-color-emoji
+
+      - name: Prepare out dir
+        run: |
+          rm -rf _pdf
+          mkdir -p _pdf/chapters
+
+      - name: Build root README.pdf
+        run: |
+          if [ -f "README.md" ]; then
+            pandoc "README.md" \
+              -o "_pdf/README.pdf" \
+              --pdf-engine=xelatex \
+              --resource-path="." \
+              -V mainfont="Noto Sans CJK KR" \
+              -V monofont="Noto Sans Mono CJK KR"
+          fi
+
+      - name: Build per-folder README -> PDF
+        shell: bash
+        run: |
+          shopt -s globstar nullglob
+          for f in **/README.md; do
+            base=$(dirname "$f")
+            base_name=$(echo "$base" | sed 's#[/ ]#_#g')
+            out="_pdf/chapters/${base_name:-root}.pdf"
+            echo "Building $f -> $out"
+            pandoc "$f" \
+              -o "$out" \
+              --pdf-engine=xelatex \
+              --resource-path="$base:." \
+              -V mainfont="Noto Sans CJK KR" \
+              -V monofont="Noto Sans Mono CJK KR"
+          done
+
+      - name: Build single BOOK.pdf (all md)
+        shell: bash
+        run: |
+          files=()
+          if [ -f "README.md" ]; then files+=("README.md"); fi
+          while IFS= read -r -d '' file; do files+=("$file"); done < <(find . -type f -name "*.md" ! -path "./.*/*" ! -path "./.github/*" ! -name "README.md" -print0 | sort -z)
+
+          if [ ${#files[@]} -gt 0 ]; then
+            echo "Merging ${#files[@]} markdown files into _pdf/BOOK.pdf"
+            pandoc "${files[@]}" \
+              -o "_pdf/BOOK.pdf" \
+              --pdf-engine=xelatex \
+              --resource-path="." \
+              -V mainfont="Noto Sans CJK KR" \
+              -V monofont="Noto Sans Mono CJK KR"
+          else
+            echo "No markdown files found to build BOOK.pdf"
+          fi
+
+      - name: Upload PDFs
+        uses: actions/upload-artifact@v4
+        with:
+          name: pdfs
+          path: _pdf
