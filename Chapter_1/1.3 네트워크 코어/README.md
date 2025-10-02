@@ -4,7 +4,7 @@
 
 아래 그림에서의 굵은 선들은 네트워크 코어를 나타낸 것이다.
 
-<p align="center"><img width="450" alt="네트워크 코어" src="https://user-images.githubusercontent.com/86337233/210137238-bf8d10d3-ef09-4263-9339-7fedbb2d619e.png">
+<p align="center"><img width="300" alt="네트워크 코어" src="https://user-images.githubusercontent.com/86337233/210137238-bf8d10d3-ef09-4263-9339-7fedbb2d619e.png">
 
 <br/>
 <br/>
@@ -46,7 +46,7 @@
 
 <br/>
 
-<p align="center"><img width="500" alt="저장-후-전달 패킷 교환" src="https://user-images.githubusercontent.com/86337233/210137289-63c6e459-0892-4ee6-8a91-d35fe4f9fb51.png">
+<p align="center"><img width="350" alt="저장-후-전달 패킷 교환" src="https://user-images.githubusercontent.com/86337233/210137289-63c6e459-0892-4ee6-8a91-d35fe4f9fb51.png">
 
 <br/>
 <br/>
@@ -157,7 +157,7 @@
 <br/>
 
 아래의 예시를 보자.
-<p align="center"><img width="500" alt="패킷 교환" src="https://user-images.githubusercontent.com/86337233/210137348-9f7c303f-5261-4e62-8885-36e36eeb4dea.png">
+<p align="center"><img width="400" alt="패킷 교환" src="https://user-images.githubusercontent.com/86337233/210137348-9f7c303f-5261-4e62-8885-36e36eeb4dea.png">
 
 <br/>
 <br/>
@@ -235,7 +235,7 @@ e.g., 각 라우터로부터 각 목적지까지 최단 경로를 결정 → 라
 
 이들 각 링크는 4개의 회선을 가지므로 **각 링크는 4개의 동시 연결을 지원할 수 있다.**
 
-<p align="center"><img width="470" alt="회선 교환 네트워크" src="https://user-images.githubusercontent.com/86337233/210137402-59bd4469-e343-430c-96df-9f5c6c072005.png">
+<p align="center"><img width="320" alt="회선 교환 네트워크" src="https://user-images.githubusercontent.com/86337233/210137402-59bd4469-e343-430c-96df-9f5c6c072005.png">
 
 <br/>
 <br/>
