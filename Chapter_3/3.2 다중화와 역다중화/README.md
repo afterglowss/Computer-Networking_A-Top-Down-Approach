@@ -162,7 +162,6 @@ _(초기 연결 설정 요청을 전달하는 TCP는 제외)_
 <p align="center"><img width="700" alt="웹 서버 애플리케이션 통신" src="https://user-images.githubusercontent.com/86337233/211320137-5c90b955-b4b2-4dcb-ab04-8f25e6b24d2e.png">
 
 <br/>
-<br/>
 
 호스트 A, 호스트 C, 서버 B는 **각자 유일한 IP 주소인 A, C, B를 각각 가지고 있다.**
 
@@ -191,7 +190,6 @@ _(초기 연결 설정 요청을 전달하는 TCP는 제외)_
 - 오늘날의 많은 고성능 웹 서버는 하나의 프로세스만 사용한다.
 - 각각의 새로운 클라이언트 연결을 위해 새로운 연결 소켓과 함께 새로운 `스레드(thread)`를 생성한다.
 
-<br/>
 <br/>
 
 ## Persistent & Non-persistent HTTP
