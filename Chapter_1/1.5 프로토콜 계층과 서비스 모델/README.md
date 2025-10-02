@@ -149,7 +149,7 @@ e.g., 어떤 프로토콜은 송신 노드로부터 하나의 링크를 통해 �
 2. 중간의 **링크 계층 스위치**와 **라우터의 프로토콜 스택**을 위아래로 거치고
 3. **수신 종단 시스템**의 프로토콜 스택 상위로 보낸다.
 
-<p align="center"><img width="650" alt="캡슐화" src="https://user-images.githubusercontent.com/86337233/210246864-ce756378-bd52-4618-9a24-fefe4cc85465.png">
+<p align="center"><img width="450" alt="캡슐화" src="https://user-images.githubusercontent.com/86337233/210246864-ce756378-bd52-4618-9a24-fefe4cc85465.png">
 
 <br/>
 <br/>
