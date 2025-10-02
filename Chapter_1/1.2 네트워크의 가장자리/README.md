@@ -13,7 +13,7 @@
 <br/>
 
 아래는 종단 시스템의 상호작용을 나타낸 그림이다.
-<p align="center"><img width="450" alt="종단 시스템 상호작용" src="https://user-images.githubusercontent.com/86337233/210128184-301c72b1-c174-432e-b14d-8824c2a58cea.png">
+<p align="center"><img width="300" alt="종단 시스템 상호작용" src="https://user-images.githubusercontent.com/86337233/210128184-301c72b1-c174-432e-b14d-8824c2a58cea.png">
 
 <br/><br/>
 
@@ -25,7 +25,7 @@
 
 아래 그림에서의 굵은 선들은 여러 종류의 접속 네트워크들을 나타낸 것이다.
 
-<p align="center"><img width="450" alt="접속 네트워크" src="https://user-images.githubusercontent.com/86337233/210129140-31bb75d0-c8f9-4a70-bb54-60c805b1fea8.png">
+<p align="center"><img width="300" alt="접속 네트워크" src="https://user-images.githubusercontent.com/86337233/210129140-31bb75d0-c8f9-4a70-bb54-60c805b1fea8.png">
 <br/>
 <br/>
 
@@ -57,7 +57,7 @@
 
 #### DSL 모뎀
 
-<p align="center"><img width="550" alt="DSL 인터넷 접속" src="https://user-images.githubusercontent.com/86337233/210128274-3b65a140-9c16-4b41-8f6d-5da5099f1a68.png">
+<p align="center"><img width="400" alt="DSL 인터넷 접속" src="https://user-images.githubusercontent.com/86337233/210128274-3b65a140-9c16-4b41-8f6d-5da5099f1a68.png">
 <br/>
 <br/>
 
