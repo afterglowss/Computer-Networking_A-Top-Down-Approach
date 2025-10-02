@@ -10,7 +10,7 @@
 ## 1.1.1 구성 요소로 본 인터넷
 
 아래의 그림은 인터넷의 구성요소를 나타낸 것이다.
-<p align="center"><img width="450" alt="인터넷의 구성 요소" src="https://user-images.githubusercontent.com/86337233/210067671-04ad6d39-45fc-4ba9-a773-d964ec4cdc7c.png">
+<p align="center"><img width="300" alt="인터넷의 구성 요소" src="https://user-images.githubusercontent.com/86337233/210067671-04ad6d39-45fc-4ba9-a773-d964ec4cdc7c.png">
 
 <br/>
 
@@ -129,7 +129,7 @@ Q.
 
 아래의 그림은 사람 프로토콜과 컴퓨터 네트워크 프로토콜을 나타낸 것이다.
 
-<p align="center"><img width="550" alt="인터넷의 구성 요소" src="https://user-images.githubusercontent.com/86337233/210089593-aff053d6-b57c-45c4-ad06-f209a11a0e3a.png">
+<p align="center"><img width="400" alt="인터넷의 구성 요소" src="https://user-images.githubusercontent.com/86337233/210089593-aff053d6-b57c-45c4-ad06-f209a11a0e3a.png">
 
 - 메세지의 송수신과 메시지를 송수신할 때 취하는 행동은 프로토콜의 중심에 있다.
 - 따라서 하나가 다른 프로토콜을 수행한다면 그 프로토콜은 다른 이들과 상호작용할 수 없으며, 원하는 작업을 수행할 수 없다.
