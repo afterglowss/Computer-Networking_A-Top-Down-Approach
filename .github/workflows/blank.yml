@@ -1,0 +1,117 @@
+name: Build Markdown to PDF
+
+on:
+  workflow_dispatch: {}          # Actions 탭에서 수동 실행
+  push:
+    paths:
+      - "**/*.md"                # md 변경 시 자동 빌드
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      # Pandoc + LaTeX + 한글/이모지 폰트
+      - name: Install pandoc + LaTeX + CJK fonts
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y pandoc texlive-xetex texlive-latex-recommended texlive-latex-extra
+          sudo apt-get install -y fonts-noto-cjk fonts-noto-color-emoji
+
+      # HTML→PDF 엔진 (이모지 대응)
+      - name: Install wkhtmltopdf
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y wkhtmltopdf
+
+      - name: Prepare out dir
+        run: |
+          rm -rf _pdf
+          mkdir -p _pdf/chapters
+
+      # 1) 루트 README → PDF (LaTeX 엔진)
+      - name: Build root README.pdf
+        run: |
+          if [ -f "README.md" ]; then
+            pandoc "README.md" \
+              -o "_pdf/README.pdf" \
+              --pdf-engine=xelatex \
+              --resource-path="." \
+              -V mainfont="Noto Sans CJK KR" \
+              -V monofont="Noto Sans Mono CJK KR"
+          fi
+
+      # 2) 폴더별 README → 챕터별 PDF (파일명 안전 치환 포함)
+      - name: Build per-folder README -> PDF
+        shell: bash
+        run: |
+          shopt -s globstar nullglob
+          for f in **/README.md; do
+            base=$(dirname "$f")
+            # 업로드 비호환 문자 치환: " : < > | * ? 및 공백/슬래시
+            safe_base=$(echo "$base" | sed 's/[":<>|*?]/_/g' | sed 's#[/ ]#_#g')
+            out="_pdf/chapters/${safe_base:-root}.pdf"
+            echo "Building $f -> $out"
+            pandoc "$f" \
+              -o "$out" \
+              --pdf-engine=xelatex \
+              --resource-path="$base:." \
+              -V mainfont="Noto Sans CJK KR" \
+              -V monofont="Noto Sans Mono CJK KR"
+          done
+
+      # 3) 모든 md 합본 → BOOK.pdf (LaTeX 엔진)
+      - name: Build single BOOK.pdf (all md)
+        shell: bash
+        run: |
+          files=()
+          if [ -f "README.md" ]; then files+=("README.md"); fi
+          # 숨김/워크플로 제외, 사전순
+          while IFS= read -r -d '' file; do files+=("$file"); done < <(find . -type f -name "*.md" ! -path "./.*/*" ! -path "./.github/*" ! -name "README.md" -print0 | sort -z)
+          if [ ${#files[@]} -gt 0 ]; then
+            pandoc "${files[@]}" \
+              -o "_pdf/BOOK.pdf" \
+              --pdf-engine=xelatex \
+              --resource-path="." \
+              -V mainfont="Noto Sans CJK KR" \
+              -V monofont="Noto Sans Mono CJK KR"
+          else
+            echo "No markdown files found to build BOOK.pdf"
+          fi
+
+      # 4) 이모지 대응 버전 (HTML → PDF 엔진)
+      - name: Build README_emoji.pdf (wkhtmltopdf)
+        if: hashFiles('README.md') != ''
+        run: |
+          pandoc README.md \
+            -t html5 -s \
+            -o _pdf/README_emoji.pdf \
+            --pdf-engine=wkhtmltopdf \
+            --resource-path=.
+
+      - name: Build BOOK_emoji.pdf (wkhtmltopdf)
+        shell: bash
+        run: |
+          files=()
+          if [ -f "README.md" ]; then files+=("README.md"); fi
+          while IFS= read -r -d '' file; do files+=("$file"); done < <(find . -type f -name "*.md" ! -path "./.*/*" ! -path "./.github/*" -print0 | sort -z)
+          if [ ${#files[@]} -gt 0 ]; then
+            pandoc "${files[@]}" \
+              -t html5 -s \
+              -o _pdf/BOOK_emoji.pdf \
+              --pdf-engine=wkhtmltopdf \
+              --resource-path="."
+          fi
+
+      # 산출물 업로드
+      - name: Upload PDFs
+        uses: actions/upload-artifact@v4
+        with:
+          name: pdfs
+          path: _pdf
+          if-no-files-found: warn
