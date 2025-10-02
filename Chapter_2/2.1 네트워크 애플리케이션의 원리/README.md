@@ -265,7 +265,7 @@ TCP와 UDP는 처리율 혹은 시간 보장 서비스를 제공하지 않는다
 <br/>
 <br/>
 
-## 인기 있는 인터넷 애플리케이션의 애플리케이션 계층 프로토콜 및 하위 트랜스포트 프로토콜
+## 유명한 인터넷 앱의 애플리케이션 계층 프로토콜 및 하위 트랜스포트 프로토콜
 
 <p align="center"><img width="400" alt="하위 트랜스포트 프로토콜" src="https://user-images.githubusercontent.com/76640167/210484597-debfaad5-bc3b-4c64-ba00-fef7502dab75.png">
 
