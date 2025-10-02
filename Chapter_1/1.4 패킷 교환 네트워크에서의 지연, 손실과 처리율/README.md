@@ -28,7 +28,7 @@
 
 아래의 그림을 보며 큰 그림을 그려보자. 이는 라우터 A에서의 노드 지연을 나타낸 것이다.
 
-<p align="center"><img width="470" alt="노드 지연" src="https://user-images.githubusercontent.com/86337233/210216460-d4e1eacc-cde9-4185-aca8-661e78a20427.png">
+<p align="center"><img width="300" alt="노드 지연" src="https://user-images.githubusercontent.com/86337233/210216460-d4e1eacc-cde9-4185-aca8-661e78a20427.png">
 
 <br/>
 <br/>
@@ -214,7 +214,7 @@ e.g., 10개의 패킷이 동시에 비어 있는 큐에 도착한다면?
 
 아래 그래프는 **트래픽 강도에 대한 평균 큐잉 지연의 질적 의존도**를 나타낸다.
 
-<p align="center"><img width="320" alt="평균 큐잉 지연의 트래픽 강도 의존성" src="https://user-images.githubusercontent.com/86337233/210216463-79992219-167f-4340-ab30-31383deac4d3.png">
+<p align="center"><img width="250" alt="평균 큐잉 지연의 트래픽 강도 의존성" src="https://user-images.githubusercontent.com/86337233/210216463-79992219-167f-4340-ab30-31383deac4d3.png">
 
 <br/>
 <br/>
@@ -315,7 +315,7 @@ e.g., 10개의 패킷이 동시에 비어 있는 큐에 도착한다면?
 
 서버로부터 클라이언트로의 파일 전송에 대한 처리율을 생각해보기 위해 두 가지 예시를 보자.
 
-<p align="center"><img width="500" alt="파일 전송 처리율" src="https://user-images.githubusercontent.com/86337233/210216470-eff94fd0-1b04-4efd-aa60-85f7bad15507.png">
+<p align="center"><img width="350" alt="파일 전송 처리율" src="https://user-images.githubusercontent.com/86337233/210216470-eff94fd0-1b04-4efd-aa60-85f7bad15507.png">
 
 <br/>
 <br/>
@@ -361,7 +361,7 @@ N개 링크의 전송률 : R1, R2, ... , RN
 
 아래는 오늘날의 인터넷에서 살펴볼 수 있는 다른 두 가지 예시이다.
 
-<p align="center"><img width="400" alt="종단 간 처리율" src="https://user-images.githubusercontent.com/86337233/210216466-21232719-49ba-41e4-a6f9-af5491b6ffd2.png">
+<p align="center"><img width="300" alt="종단 간 처리율" src="https://user-images.githubusercontent.com/86337233/210216466-21232719-49ba-41e4-a6f9-af5491b6ffd2.png">
 
 <br/>
 <br/>
